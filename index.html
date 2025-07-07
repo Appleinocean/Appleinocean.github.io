@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GA4 테스트 블로그</title>
-    
+    <title>GA4 테스트 사이트</title>
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YH06MTG6TG"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -15,63 +15,122 @@
     </script>
     
     <style>
-        body { font-family: sans-serif; line-height: 1.6; padding: 20px; max-width: 800px; margin: auto; }
-        h1 { color: #333; }
-        .button-container { margin-top: 20px; margin-bottom: 30px; }
+        body { font-family: sans-serif; line-height: 1.6; padding: 20px; max-width: 900px; margin: auto; background-color: #f4f4f9; }
+        header, .section { background-color: #fff; padding: 20px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        h1, h2 { color: #333; border-bottom: 2px solid #5a67d8; padding-bottom: 10px; }
+        .product-list { display: flex; gap: 20px; justify-content: space-around; flex-wrap: wrap; }
+        .product-item { border: 1px solid #ddd; padding: 15px; border-radius: 8px; text-align: center; width: 250px; }
+        .product-item img { max-width: 100%; height: auto; border-radius: 4px; }
+        .product-item h3 { margin-top: 0; }
+        .price { color: #e53e3e; font-size: 1.2em; font-weight: bold; }
         button { 
-            padding: 10px 15px; 
-            margin-right: 10px; 
-            cursor: pointer; 
-            border: 1px solid #ddd; 
-            background-color: #f0f0f0; 
-            transition: background-color 0.2s, transform 0.1s;
+            padding: 10px 15px; margin-top: 10px; cursor: pointer; border: none; 
+            background-color: #5a67d8; color: white; border-radius: 5px; font-weight: bold;
+            transition: background-color 0.3s;
         }
-        /* 버튼 클릭 시 시각적 효과 추가 */
-        button:active {
-            background-color: #ccc;
-            transform: scale(0.98);
-        }
+        button:hover { background-color: #434190; }
+        #purchase-btn { background-color: #38a169; }
+        #purchase-btn:hover { background-color: #2f855a; }
     </style>
 </head>
 <body>
 
-    <h1>안녕하세요! GA4 테스트용 블로그입니다.</h1>
-    <p>이 페이지는 Google Analytics 4 (GA4)와 BigQuery 연동을 테스트하기 위해 만들어졌습니다.</p>
-    <p>아래 버튼들을 클릭하여 다양한 이벤트를 발생시켜 보세요.</p>
+    <header>
+        <h1>AI 분석가를 위한 GA4 테스트 쇼핑몰</h1>
+        <p>이 사이트에서 다양한 행동을 하여 의미있는 데이터를 생성해보세요.</p>
+    </header>
 
-    <div class="button-container">
-        <button id="cta_button_1">소개 보기</button>
-        <button id="cta_button_2">포트폴리오</button>
-        <button id="download_button">자료 다운로드</button>
-    </div>
+    <section>
+        <h2>추천 상품</h2>
+        <div class="product-list" id="main-product-list">
+            <div class="product-item">
+                <img src="https://via.placeholder.com/200x150.png?text=Product+A" alt="상품 A">
+                <h3>LLM 에이전트 개발 키트</h3>
+                <p class="price">120,000원</p>
+                <button class="add-to-cart-btn" data-item-id="P001" data-item-name="LLM 에이전트 개발 키트" data-price="120000">장바구니 담기</button>
+            </div>
+            <div class="product-item">
+                <img src="https://via.placeholder.com/200x150.png?text=Product+B" alt="상품 B">
+                <h3>AI 데이터 분석 마스터리</h3>
+                <p class="price">99,000원</p>
+                <button class="add-to-cart-btn" data-item-id="P002" data-item-name="AI 데이터 분석 마스터리" data-price="99000">장바구니 담기</button>
+            </div>
+            <div class="product-item">
+                <img src="https://via.placeholder.com/200x150.png?text=Product+C" alt="상품 C">
+                <h3>Prophet 시계열 예측 강의</h3>
+                <p class="price">75,000원</p>
+                <button class="add-to-cart-btn" data-item-id="P003" data-item-name="Prophet 시계열 예측 강의" data-price="75000">장바구니 담기</button>
+            </div>
+        </div>
+    </section>
 
-    <h2>스크롤 테스트용 본문</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <p>Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula. Donec lobortis risus a elit. Etiam tempor. Ut ullamcorper, ligula eu tempor congue, eros est euismod turpis, id tincidunt sapien risus a quam. Maecenas fermentum consequat mi. Donec fermentum. Pellentesque malesuada nulla a mi. Duis sapien sem, aliquet nec, commodo eget, consequat quis, neque. Aliquam faucibus, elit ut dictum aliquet, felis nisl adipiscing sapien, sed malesuada diam lacus eget erat. Cras mollis scelerisque nunc. Nullam arcu. Aliquam consequat.</p>
-    <p>Vivamus consequat, felis ut grass, quam metus tempus tellus, ac mattis eros nisl vitae tellus. Sed quis ante. Vivamus non lorem. Proin sed quam. Phasellus sit amet lorem. Sed eu libero. Sed nec arcu. Cras rhoncus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent ut ligula non mi varius sagittis. Curabitur et ligula. Quisque facilisis. Ut vitae turpis. Nam sapien. Cras et massa. Proin quis pede. Nulla facilisi. Integer interdum. Sed vel urna. Integer sit amet ligula. Integer eget massa. Curabitur a lorem. Vivamus et mauris. Suspendisse sed est. Praesent interdum. Quisque ut nisl.</p>
+    <section>
+        <h2>결제</h2>
+        <p>장바구니에 담은 상품들을 결제하여 구매 데이터를 생성합니다.</p>
+        <button id="purchase-btn">결제하기 (구매 데이터 생성)</button>
+    </section>
+    
 
     <script>
-        // 모든 버튼에 이벤트 리스너를 추가하는 함수
-        function addButtonClickListener(buttonId) {
-            const button = document.getElementById(buttonId);
-            if (button) {
-                button.addEventListener('click', function() {
-                    console.log(buttonId + ' 버튼 클릭됨'); // 브라우저 콘솔에서 확인용
-                    
-                    // GA4로 맞춤 이벤트 전송
-                    gtag('event', 'button_click', {
-                        'button_id': buttonId,
-                        'button_text': button.innerText
-                    });
+        // 페이지 로드 시 '상품 목록 보기' 이벤트 전송
+        gtag('event', 'view_item_list', {
+            'item_list_id': 'main_products',
+            'item_list_name': '메인 추천 상품',
+            'items': [
+                { 'item_id': 'P001', 'item_name': 'LLM 에이전트 개발 키트', 'price': 120000 },
+                { 'item_id': 'P002', 'item_name': 'AI 데이터 분석 마스터리', 'price': 99000 },
+                { 'item_id': 'P003', 'item_name': 'Prophet 시계열 예측 강의', 'price': 75000 }
+            ]
+        });
+
+        // '장바구니 담기' 버튼 클릭 이벤트
+        document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const itemId = this.dataset.itemId;
+                const itemName = this.dataset.itemName;
+                const price = parseFloat(this.dataset.price);
+
+                // 상품 선택 및 상세 보기 이벤트 동시 전송 (시뮬레이션)
+                gtag('event', 'select_item', { 
+                    'item_list_id': 'main_products',
+                    'items': [{ 'item_id': itemId, 'item_name': itemName }]
                 });
-            }
-        }
+                gtag('event', 'view_item', {
+                     'currency': 'KRW', 'value': price,
+                     'items': [{ 'item_id': itemId, 'item_name': itemName }]
+                });
 
-        // 각 버튼에 리스너 적용
-        addButtonClickListener('cta_button_1');
-        addButtonClickListener('cta_button_2');
-        addButtonClickListener('download_button');
+                // 장바구니 추가 이벤트
+                gtag('event', 'add_to_cart', {
+                    'currency': 'KRW', 'value': price,
+                    'items': [{ 'item_id': itemId, 'item_name': itemName, 'quantity': 1 }]
+                });
+                
+                alert(`'${itemName}' 상품이 장바구니에 담겼습니다. (GA4 이벤트 전송됨)`);
+            });
+        });
+
+        // '결제하기' 버튼 클릭 이벤트
+        document.getElementById('purchase-btn').addEventListener('click', function() {
+            // 실제로는 장바구니에 담긴 상품을 기준으로 해야 하지만, 테스트를 위해 고정된 상품으로 구매 이벤트를 생성합니다.
+            const transactionId = 'T' + new Date().getTime();
+            const totalValue = 120000 + 99000;
+
+            gtag('event', 'purchase', {
+                'transaction_id': transactionId,
+                'value': totalValue,
+                'currency': 'KRW',
+                'tax': totalValue * 0.1,
+                'shipping': 3000,
+                'items': [
+                    { 'item_id': 'P001', 'item_name': 'LLM 에이전트 개발 키트', 'price': 120000, 'quantity': 1 },
+                    { 'item_id': 'P002', 'item_name': 'AI 데이터 분석 마스터리', 'price': 99000, 'quantity': 1 }
+                ]
+            });
+            
+            alert(`구매가 완료되었습니다! (거래 ID: ${transactionId}) (GA4 이벤트 전송됨)`);
+        });
     </script>
-
 </body>
 </html>
+
