@@ -1,22 +1,36 @@
 <!DOCTYPE html>
 <html lang="ko">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YH06MTG6TG"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-YH06MTG6TG');
-</script>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GA4 테스트 블로그</title>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YH06MTG6TG"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-YH06MTG6TG'); // 본인의 G-ID로 교체하세요!
+    </script>
+    
     <style>
-        body { font-family: sans-serif; line-height: 1.6; padding: 20px; }
+        body { font-family: sans-serif; line-height: 1.6; padding: 20px; max-width: 800px; margin: auto; }
         h1 { color: #333; }
-        .button-container { margin-top: 20px; }
-        button { padding: 10px 15px; margin-right: 10px; cursor: pointer; border: 1px solid #ddd; background-color: #f0f0f0; }
+        .button-container { margin-top: 20px; margin-bottom: 30px; }
+        button { 
+            padding: 10px 15px; 
+            margin-right: 10px; 
+            cursor: pointer; 
+            border: 1px solid #ddd; 
+            background-color: #f0f0f0; 
+            transition: background-color 0.2s, transform 0.1s;
+        }
+        /* 버튼 클릭 시 시각적 효과 추가 */
+        button:active {
+            background-color: #ccc;
+            transform: scale(0.98);
+        }
     </style>
 </head>
 <body>
@@ -31,5 +45,33 @@
         <button id="download_button">자료 다운로드</button>
     </div>
 
-    </body>
+    <h2>스크롤 테스트용 본문</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p>Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula. Donec lobortis risus a elit. Etiam tempor. Ut ullamcorper, ligula eu tempor congue, eros est euismod turpis, id tincidunt sapien risus a quam. Maecenas fermentum consequat mi. Donec fermentum. Pellentesque malesuada nulla a mi. Duis sapien sem, aliquet nec, commodo eget, consequat quis, neque. Aliquam faucibus, elit ut dictum aliquet, felis nisl adipiscing sapien, sed malesuada diam lacus eget erat. Cras mollis scelerisque nunc. Nullam arcu. Aliquam consequat.</p>
+    <p>Vivamus consequat, felis ut grass, quam metus tempus tellus, ac mattis eros nisl vitae tellus. Sed quis ante. Vivamus non lorem. Proin sed quam. Phasellus sit amet lorem. Sed eu libero. Sed nec arcu. Cras rhoncus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent ut ligula non mi varius sagittis. Curabitur et ligula. Quisque facilisis. Ut vitae turpis. Nam sapien. Cras et massa. Proin quis pede. Nulla facilisi. Integer interdum. Sed vel urna. Integer sit amet ligula. Integer eget massa. Curabitur a lorem. Vivamus et mauris. Suspendisse sed est. Praesent interdum. Quisque ut nisl.</p>
+
+    <script>
+        // 모든 버튼에 이벤트 리스너를 추가하는 함수
+        function addButtonClickListener(buttonId) {
+            const button = document.getElementById(buttonId);
+            if (button) {
+                button.addEventListener('click', function() {
+                    console.log(buttonId + ' 버튼 클릭됨'); // 브라우저 콘솔에서 확인용
+                    
+                    // GA4로 맞춤 이벤트 전송
+                    gtag('event', 'button_click', {
+                        'button_id': buttonId,
+                        'button_text': button.innerText
+                    });
+                });
+            }
+        }
+
+        // 각 버튼에 리스너 적용
+        addButtonClickListener('cta_button_1');
+        addButtonClickListener('cta_button_2');
+        addButtonClickListener('download_button');
+    </script>
+
+</body>
 </html>
